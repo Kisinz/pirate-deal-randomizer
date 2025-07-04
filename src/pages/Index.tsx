@@ -19,7 +19,7 @@ const Index = () => {
   useEffect(() => {
     const baseChance = 35;
     const bonusChance = bilgewaterItems * 5;
-    const totalBilgewater = Math.min(baseChance + bonusChance, 95); // Cap at 95%
+    const totalBilgewater = baseChance + bonusChance; // Removed the cap
     setBilgewaterChance(totalBilgewater);
     setEnemyChance(100 - totalBilgewater);
   }, [bilgewaterItems]);
@@ -90,7 +90,7 @@ const Index = () => {
                 <Input
                   type="number"
                   min="0"
-                  max="12"
+                  max="15"
                   value={bilgewaterItems}
                   onChange={(e) => setBilgewaterItems(Math.max(0, parseInt(e.target.value) || 0))}
                   className="bg-slate-700 border-slate-600 text-white"
@@ -125,7 +125,7 @@ const Index = () => {
                 <div className="w-full h-4 bg-slate-700 rounded-full overflow-hidden">
                   <div 
                     className="h-full bg-gradient-to-r from-blue-500 to-blue-600 transition-all duration-500"
-                    style={{ width: `${bilgewaterChance}%` }}
+                    style={{ width: `${Math.min(bilgewaterChance, 100)}%` }}
                   ></div>
                 </div>
               </div>
@@ -180,6 +180,7 @@ const Index = () => {
                   <li>• สุ่มทุก ๆ 5 นาที</li>
                   <li>• Bilgewater เริ่มต้นที่ 35%</li>
                   <li>• +5% ต่อไอเท็มใหญ่ของ Bilgewater</li>
+                  <li>• 13 ไอเท็มใหญ่ = ชนะแน่นอน (100%)</li>
                 </ul>
               </div>
             </CardContent>
