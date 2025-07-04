@@ -66,7 +66,7 @@ const Index = () => {
             </h1>
             <Skull className="text-red-400" size={48} />
           </div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
             หลัง Draft ทีมทั้งสองแลกเปลี่ยน "ตัวเดิมพัน" คนละ 1 ตัว<br/>
             ทุก ๆ 5 นาที กรรมการจะสุ่มเพื่อหาฝ่ายที่ "เสียเดิมพัน"<br/>
             ผู้แพ้ต้องส่งตัวเดิมพันไปให้ศัตรูฆ่า โดยไม่ขัดขืนหรือหลบหลีก
@@ -84,7 +84,7 @@ const Index = () => {
             </CardHeader>
             <CardContent className="space-y-6">
               <div>
-                <Label className="text-gray-300 mb-2 block">
+                <Label className="text-gray-200 mb-2 block">
                   จำนวนไอเท็มใหญ่ของทีม Bilgewater
                 </Label>
                 <Input
@@ -95,7 +95,7 @@ const Index = () => {
                   onChange={(e) => setBilgewaterItems(Math.max(0, parseInt(e.target.value) || 0))}
                   className="bg-slate-700 border-slate-600 text-white"
                 />
-                <p className="text-sm text-gray-400 mt-1">
+                <p className="text-sm text-gray-300 mt-1">
                   +5% โอกาสชนะต่อ 1 ไอเท็มใหญ่
                 </p>
               </div>
@@ -108,7 +108,7 @@ const Index = () => {
                 <div className="flex items-center justify-between p-4 bg-slate-700/50 rounded-lg">
                   <div className="flex items-center gap-2">
                     <div className="w-4 h-4 bg-blue-500 rounded"></div>
-                    <span>Bilgewater</span>
+                    <span className="text-gray-100">Bilgewater</span>
                   </div>
                   <span className="text-2xl font-bold text-blue-400">{bilgewaterChance}%</span>
                 </div>
@@ -116,7 +116,7 @@ const Index = () => {
                 <div className="flex items-center justify-between p-4 bg-slate-700/50 rounded-lg">
                   <div className="flex items-center gap-2">
                     <div className="w-4 h-4 bg-red-500 rounded"></div>
-                    <span>Enemy Team</span>
+                    <span className="text-gray-100">Enemy Team</span>
                   </div>
                   <span className="text-2xl font-bold text-red-400">{enemyChance}%</span>
                 </div>
@@ -166,7 +166,7 @@ const Index = () => {
                   <div className="text-3xl font-bold mb-2">
                     {result.includes("Bilgewater ต้องส่ง") ? "💀" : "⚔️"}
                   </div>
-                  <p className="text-xl font-semibold">
+                  <p className="text-xl font-semibold text-gray-100">
                     {result}
                   </p>
                 </div>
@@ -175,7 +175,7 @@ const Index = () => {
               {/* Rules reminder */}
               <div className="bg-slate-700/30 p-4 rounded-lg">
                 <h4 className="font-semibold text-yellow-400 mb-2">กฎของ Pirate's Deal:</h4>
-                <ul className="text-sm text-gray-300 space-y-1">
+                <ul className="text-sm text-gray-200 space-y-1">
                   <li>• ตัวเดิมพันต้องไปให้ศัตรูฆ่าโดยไม่ขัดขืน</li>
                   <li>• สุ่มทุก ๆ 5 นาที</li>
                   <li>• Bilgewater เริ่มต้นที่ 35%</li>
@@ -188,7 +188,7 @@ const Index = () => {
         </div>
 
         {/* Footer */}
-        <div className="text-center mt-12 text-gray-400">
+        <div className="text-center mt-12 text-gray-300">
           <p>🏴‍☠️ Welcome to the High Seas of League of Legends 🏴‍☠️</p>
         </div>
       </div>
